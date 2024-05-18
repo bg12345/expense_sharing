@@ -10,4 +10,6 @@ class User(models.Model):
 
 class PaymentSplit(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
-    user_owes=models.JSONField(default=dict)
+    debtor=models.JSONField(default=dict)
+    total_payment=models.FloatField(default=0)
+    expense=models.FloatField(default=0)
